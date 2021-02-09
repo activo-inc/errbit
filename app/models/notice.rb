@@ -23,7 +23,7 @@ class Notice
 
   belongs_to :app
   belongs_to :err
-  belongs_to :backtrace, index: true
+  belongs_to :backtrace, index: true, dependent: :destroy
 
   index(created_at: 1)
   index(err_id: 1, created_at: 1, _id: 1)

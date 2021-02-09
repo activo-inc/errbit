@@ -36,7 +36,7 @@ private
   end
 
   def delete_errs
-    Notice.delete_all(err_id: { '$in' => errs_id })
+    Notice.destroy_all(err_id: { '$in' => errs_id })
     Err.delete_all(_id: { '$in' => errs_id })
   end
 
